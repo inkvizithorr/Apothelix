@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Objednávka · Apothelix</title>
+<meta name="description" content="Objednávka plánu Apothelix: doručení a platba.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top" id="siteHeader">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Apothelix, úvodní stránka">
+      <svg class="seal" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width=".75" stroke-dasharray="1.5 2.2"/>
+        <text x="24" y="31.5" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="22" fill="currentColor">A</text>
+      </svg>
+      <span class="word"><b>Apothelix</b><small>Bylinná apotéka</small></span>
+    </a>
+    <nav class="pill-nav" aria-label="Hlavní navigace">
+      <a href="index.html#plany">Plány</a>
+      <a href="index.html#pribeh">Můj příběh</a>
+      <a href="geniolok.html">Geniolok</a>
+    </nav>
+    <div class="bar-end">
+      <a class="btn btn-solid bar-cta" href="objednavka.html">Objednat</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otevřít menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilní navigace" hidden>
+    <a href="index.html#plany">Plány</a>
+    <a href="index.html#pribeh">Můj příběh</a>
+    <a href="geniolok.html">Geniolok</a>
+    <a class="btn btn-solid" href="objednavka.html">Objednat</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero order-hero">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><span>Objednávka</span></p>
+      <h1>Objednávka</h1>
+      <p class="lead">Vyberte plán, způsob doručení a platby. Zabere to minutu.</p>
+    </div>
+  </section>
+
+  <section class="order-sec">
+    <div class="wrap order-grid">
+      <form class="order" id="orderForm" novalidate>
+        <fieldset class="step">
+          <legend><span class="step-n">1</span>Plán</legend>
+          <div class="opts">
+            <label class="opt" for="p-genioloci">
+              <input type="radio" name="plan" id="p-genioloci" value="GenioLoci" checked>
+              <span class="opt-body"><b>GenioLoci</b><small>Celý den: ráno, odpoledne, večer</small></span>
+              <span class="opt-price" data-price="GenioLoci"></span>
+            </label>
+            <label class="opt" for="p-jatrodej">
+              <input type="radio" name="plan" id="p-jatrodej" value="Jatroděj">
+              <span class="opt-body"><b>Jatroděj</b><small>Důraz na ráno a játra</small></span>
+              <span class="opt-price" data-price="Jatroděj"></span>
+            </label>
+            <label class="opt" for="p-ocistelix">
+              <input type="radio" name="plan" id="p-ocistelix" value="Očistelix">
+              <span class="opt-body"><b>Očistelix</b><small>Důraz na večerní zklidnění</small></span>
+              <span class="opt-price" data-price="Očistelix"></span>
+            </label>
+          </div>
+          <p class="hint">Každý plán je na 30 dní a obsahuje dávkovač Geniolok.</p>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">2</span>Doručení</legend>
+          <div class="opts">
+            <label class="opt" for="d-zasilkovna">
+              <input type="radio" name="delivery" id="d-zasilkovna" value="zasilkovna" checked>
+              <span class="opt-body"><b>Zásilkovna</b><small>Výdejní místo nebo Z-BOX</small></span>
+              <span class="opt-price" data-ship="zasilkovna"></span>
+            </label>
+            <label class="opt" for="d-kuryr">
+              <input type="radio" name="delivery" id="d-kuryr" value="kuryr">
+              <span class="opt-body"><b>Kurýr na adresu</b><small>Doručení až domů nebo do práce</small></span>
+              <span class="opt-price" data-ship="kuryr"></span>
+            </label>
+            <label class="opt" for="d-osobne">
+              <input type="radio" name="delivery" id="d-osobne" value="osobne">
+              <span class="opt-body"><b>Osobní odběr</b><small>Místo a čas domluvíme e-mailem</small></span>
+              <span class="opt-price" data-ship="osobne"></span>
+            </label>
+          </div>
+          <div class="fields" data-for="zasilkovna">
+            <label for="o-point">Výdejní místo Zásilkovny<input id="o-point" name="point" placeholder="Město a název výdejního místa"></label>
+          </div>
+          <div class="fields two" data-for="kuryr" hidden>
+            <label class="full" for="o-street">Ulice a číslo<input id="o-street" name="street" autocomplete="street-address"></label>
+            <label for="o-city">Město<input id="o-city" name="city" autocomplete="address-level2"></label>
+            <label for="o-zip">PSČ<input id="o-zip" name="zip" autocomplete="postal-code" inputmode="numeric"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">3</span>Kontakt</legend>
+          <div class="fields two">
+            <label class="full" for="o-name">Jméno a příjmení<input id="o-name" name="name" autocomplete="name" required></label>
+            <label for="o-email">E-mail<input id="o-email" name="email" type="email" autocomplete="email" required></label>
+            <label for="o-phone">Telefon<input id="o-phone" name="phone" type="tel" autocomplete="tel" required></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="step">
+          <legend><span class="step-n">4</span>Platba</legend>
+          <div class="opts">
+            <label class="opt" for="pay-qr">
+              <input type="radio" name="pay" id="pay-qr" value="qr" checked>
+              <span class="opt-body"><b>QR platba převodem</b><small>Po odeslání se zobrazí QR kód pro bankovní aplikaci</small></span>
+            </label>
+            <label class="opt" for="pay-cod">
+              <input type="radio" name="pay" id="pay-cod" value="cod">
+              <span class="opt-body"><b>Při převzetí</b><small>Hotově nebo kartou u kurýra či na výdejním místě</small></span>
+              <span class="opt-price" data-ship="cod"></span>
+            </label>
+            <label class="opt disabled" for="pay-card">
+              <input type="radio" name="pay" id="pay-card" value="card" disabled>
+              <span class="opt-body"><b>Kartou online</b><small>Apple Pay, Google Pay, karta</small></span>
+              <span class="soon">Brzy</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="consent" for="o-terms"><input id="o-terms" type="checkbox" required>Souhlasím s obchodními podmínkami a se zpracováním osobních údajů pro vyřízení objednávky.</label>
+        <p class="form-msg" id="orderMsg" role="status" hidden></p>
+      </form>
+
+      <aside class="summary" aria-label="Souhrn objednávky">
+        <p class="label">Souhrn</p>
+        <dl>
+          <div><dt>Plán</dt><dd id="s-plan">GenioLoci</dd></div>
+          <div><dt>Doručení</dt><dd id="s-delivery">Zásilkovna</dd></div>
+          <div><dt>Platba</dt><dd id="s-pay">QR platba</dd></div>
+          <div class="total"><dt>Celkem</dt><dd id="s-total">Cena brzy</dd></div>
+        </dl>
+        <button class="btn btn-solid" type="submit" form="orderForm">Odeslat objednávku</button>
+        <small>Doplněk stravy. Neslouží jako náhrada pestré a vyvážené stravy.</small>
+      </aside>
+
+      <div class="done" id="orderDone" hidden>
+        <p class="label">Objednávka připravena</p>
+        <h2>Děkujeme, <span id="d-name"></span>.</h2>
+        <p class="lead" id="d-text"></p>
+        <div class="qr-box" id="qrBox" hidden>
+          <div id="qr" class="qr"></div>
+          <div class="qr-info" id="qrInfo"></div>
+        </div>
+        <p class="hint">Toto je náhled e-shopu. Objednávka se zatím nikam neodesílá, napojíme ji při spuštění.</p>
+        <a class="btn btn-ghost" href="index.html">Zpět na úvod</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <p>Doplněk stravy. Neslouží jako náhrada pestré a vyvážené stravy.</p>
+      <p>Tento produkt není určen k diagnostice, léčbě, léčení nebo prevenci jakékoli nemoci.</p>
+      <p>Nepřekračujte doporučenou denní dávku.</p>
+    </div>
+    <div class="fineprint">
+      <p>Uchovávejte mimo dosah dětí. Není určeno pro děti, těhotné a kojící ženy. Při užívání léků se poraďte s lékařem.</p>
+      <p>* Tvrzení u rostlinných látek čekají na posouzení EFSA a používají se v souladu s přechodnými ustanoveními nařízení (ES) č. 1924/2006.</p>
+    </div>
+    <div class="foot-row">
+      <span>© 2026 Apothelix · apothelix.cz</span>
+      <span><a href="genioloci.html">GenioLoci</a> · <a href="jatrodej.html">Jatroděj</a> · <a href="ocistelix.html">Očistelix</a> · <a href="geniolok.html">Geniolok</a> · <a href="pribeh.html">Můj příběh</a> · <a href="objednavka.html">Objednávka</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
