@@ -5,12 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GenioLoci · Apothelix</title>
 <meta name="description" content="Komplexní 30denní plán GenioLoci pro ráno, odpoledne i večer.">
+<meta name="theme-color" content="#EEF2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1613" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Apothelix">
+<meta property="og:title" content="GenioLoci · Apothelix">
+<meta property="og:description" content="Komplexní 30denní plán GenioLoci pro ráno, odpoledne i večer.">
+<meta property="og:image" content="https://apothelix.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://apothelix.vercel.app/genioloci.html">
+<link rel="alternate" hreflang="cs" href="https://apothelix.vercel.app/genioloci.html">
+<link rel="alternate" hreflang="en" href="https://apothelix.vercel.app/en/genioloci.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="top" id="siteHeader">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Apothelix, úvodní stránka">
@@ -27,6 +42,7 @@
       <a href="geniolok.html">Geniolok</a>
     </nav>
     <div class="bar-end">
+      <a class="lang" href="en/genioloci.html" hreflang="en" lang="en" aria-label="English version">EN</a>
       <a class="btn btn-solid bar-cta" href="objednavka.html">Objednat</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otevřít menu"><span></span><span></span></button>
     </div>
@@ -35,11 +51,13 @@
     <a href="index.html#plany">Plány</a>
     <a href="index.html#pribeh">Můj příběh</a>
     <a href="geniolok.html">Geniolok</a>
+    <a href="kviz.html">Najít plán</a>
+    <a href="en/genioloci.html" hreflang="en" lang="en">English</a>
     <a class="btn btn-solid" href="objednavka.html">Objednat</a>
   </nav>
 </header>
 
-<main>
+<main id="obsah">
   <section class="page-hero">
     <div class="wrap">
       <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><a href="index.html#plany">Plány</a><span>/</span><span>GenioLoci</span></p>
@@ -58,7 +76,7 @@
           <div><span>Fáze denně</span><b>Ráno · Odpoledne · Večer</b></div>
           <div><span>Látek v systému</span><b>11</b></div>
           <div><span>Dávkovač</span><b>Geniolok v ceně</b></div>
-          <div><span>Cena</span><b>Brzy</b></div>
+          <div><span>Cena</span><b data-plan-price="GenioLoci">Brzy</b></div>
         </dl>
       </div>
     </div>
@@ -112,6 +130,25 @@
 
   
 
+  <section id="otazky" class="faq-sec">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="label">Časté otázky</p>
+        <h2 style="margin-top:14px">Než objednáte.</h2>
+        <p class="lead" style="margin-top:14px">Poctivě a bez slibů, které doplněk stravy dát nemůže.</p>
+      </div>
+      <div class="faq">
+        <details class="faq-item"><summary>Jaký je rozdíl oproti Jatroději a Očistelixu?</summary><p>GenioLoci rozkládá péči rovnoměrně do celého dne. Jatroděj má těžiště ráno a Očistelix večer. Nevíte si rady? Zkuste <a href="kviz.html">tři otázky</a>.</p></details>
+        <details class="faq-item"><summary>Jak dlouho plán užívat?</summary><p>Jeden plán je sestavený na 30 dní. Pokud chcete pokračovat dalším měsícem, můžete, jen dodržujte doporučené denní dávkování uvedené na balení. S předplatným vám další balení přijde samo.</p></details>
+        <details class="faq-item"><summary>Můžu plán užívat, když beru léky?</summary><p>Poraďte se nejdřív s lékařem nebo lékárníkem a vezměte s sebou složení plánu. Některé byliny se mohou s léky ovlivňovat, proto to nechceme odhadovat za vás.</p></details>
+        <details class="faq-item"><summary>Je plán vhodný v těhotenství nebo pro děti?</summary><p>Ne. Plány nejsou určené pro děti, těhotné a kojící ženy.</p></details>
+        <details class="faq-item"><summary>Kdy poznám nějaký rozdíl?</summary><p>To vám slíbit nemůžeme a nikdo poctivý by neměl. Doplněk stravy není lék a každý reaguje jinak. Plán je jedna část, vedle jídla, spánku a pohybu.</p></details>
+        <details class="faq-item"><summary>Můžu kombinovat dva plány najednou?</summary><p>Nedoporučujeme to. Plány se částečně překrývají, například v hořčíku, a mohli byste překročit doporučenou denní dávku. Vyberte jeden, nebo vezměte GenioLoci, který pokrývá celý den.</p></details>
+        <details class="faq-item"><summary>Co když zapomenu jednu fázi?</summary><p>Nic se neděje. Pokračujte další fází podle času a vynechanou dávku nedoplňujte dvojnásobně.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section style="padding-top:0">
     <div class="wrap">
       <div class="box-cta">
@@ -125,6 +162,10 @@
       </div>
     </div>
   </section>
+  <div class="buybar" id="buybar" aria-hidden="true">
+    <span><b>GenioLoci</b><small>30 dní · Geniolok v ceně</small></span>
+    <a class="btn btn-solid" href="objednavka.html#genioloci" tabindex="-1">Objednat</a>
+  </div>
 </main>
 
 <footer>
@@ -146,5 +187,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

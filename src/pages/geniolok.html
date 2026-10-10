@@ -1,4 +1,4 @@
-<main>
+<main id="obsah">
   <section class="page-hero">
     <div class="wrap">
       <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><span>Geniolok</span></p>
@@ -26,6 +26,7 @@
             <input id="slide" type="range" min="0" max="3" step="1" value="1">
             <div class="stops" aria-hidden="true"><span>Zavřeno</span><span>Ráno</span><span>Odpoledne</span><span>Večer</span></div>
             <p class="state" id="devState" role="status"></p>
+            <button class="snd" type="button" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>Zvuk zapnutý</span></button>
             <label>Barva</label>
             <div class="swatches">
               <button class="sw" type="button" data-color="black" aria-pressed="true"><i style="background:var(--al-black)"></i>Midnight Black</button>
@@ -34,6 +35,32 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g3d-sec">
+    <div class="wrap g3d-grid">
+      <div>
+        <p class="label">Otočte si ho</p>
+        <h2 style="margin-top:14px">Táhněte prstem. Klepněte a cvakne.</h2>
+        <p class="lead" style="margin-top:16px">Model ukazuje koncept Genioloku. Tažením ho otočíte ze všech stran, klepnutím posunete víko. Finální tvar a rozměry ještě ladíme s výrobcem.</p>
+        <div class="swatches" style="margin-top:24px">
+          <button class="sw" type="button" data-color="black" aria-pressed="true"><i style="background:var(--al-black)"></i>Midnight Black</button>
+          <button class="sw" type="button" data-color="sage" aria-pressed="false"><i style="background:var(--al-sage)"></i>Sage Green</button>
+          <button class="sw" type="button" data-color="gold" aria-pressed="false"><i style="background:var(--al-gold)"></i>Champagne Gold</button>
+        </div>
+      </div>
+      <div class="g3d" id="g3d" data-color="black" tabindex="0" role="img" aria-label="3D model Genioloku. Táhněte nebo použijte šipky pro otočení, Enter posune víko.">
+        <div class="g3d-obj">
+          <div class="f top"><div class="device" data-color="black" aria-hidden="true">
+            <div class="bays"><div class="bay"><span>RÁNO</span><div class="caps"><i class="cap"></i><i class="cap w"></i></div></div><div class="bay"><span>ODPOLEDNE</span><div class="caps"><i class="cap g"></i><i class="cap"></i></div></div><div class="bay"><span>VEČER</span><div class="caps"><i class="cap w"></i></div></div></div>
+            <div class="lid"><i>Geniolok</i></div>
+          </div></div>
+          <div class="f bottom"></div><div class="f front"></div><div class="f back"></div><div class="f left"></div><div class="f right"></div>
+        </div>
+        <div class="g3d-shadow" aria-hidden="true"></div>
+        <span class="g3d-hint" aria-hidden="true">↔ Táhněte</span>
       </div>
     </div>
   </section>
@@ -83,6 +110,14 @@
   </section>
 
   
+
+  <section id="reviews" class="reviews" hidden>
+    <div class="wrap">
+      <p class="label">Co říkají první majitelé</p>
+      <h2 style="margin-top:14px">Geniolok v rukou zákazníků.</h2>
+      <div class="rev-list"></div>
+    </div>
+  </section>
 
   <section style="padding-top:0">
     <div class="wrap">

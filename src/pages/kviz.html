@@ -1,0 +1,54 @@
+<main id="obsah">
+  <section class="quiz-sec">
+    <div class="wrap quiz-wrap">
+      <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><span>Najít plán</span></p>
+      <div class="quiz" id="quiz" aria-live="polite">
+        <div class="q-progress" aria-hidden="true"><i id="qBar"></i></div>
+        <p class="label" id="qStep">Otázka 1 ze 3</p>
+
+        <fieldset class="q active" data-q="0">
+          <legend><h1>Kdy během dne to cítíte nejvíc?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><span class="chip am">RÁNO</span><b>Ráno se těžko rozjíždím</b><small>Budík, káva, a stejně to trvá do oběda.</small></button>
+            <button type="button" class="q-opt" data-v="all"><span class="chip pm">ODPOLEDNE</span><b>Odpoledne padám</b><small>Po obědě přijde útlum a hlava jede na půl plynu.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><span class="chip ev">VEČER</span><b>Večer nemůžu vypnout</b><small>Tělo je unavené, ale myšlenky běží dál.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="1" hidden>
+          <legend><h1>Co vystihuje vaše poslední měsíce?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><b>Bylo toho moc</b><small>Pracovní večeře, oslavy, jídlo ve spěchu.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Tlak a stres</b><small>Termíny, telefon do noci, málo klidu.</small></button>
+            <button type="button" class="q-opt" data-v="all"><b>Trochu od všeho</b><small>Málo spánku, hodně práce, nepravidelný den.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="2" hidden>
+          <legend><h1>Co od plánu chcete hlavně?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="all"><b>Vyřešit celý den</b><small>Ráno, odpoledne i večer, bez přemýšlení.</small></button>
+            <button type="button" class="q-opt" data-v="am"><b>Silné ráno</b><small>Těžiště na začátku dne.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Klidné večery</b><small>Těžiště na konci dne.</small></button>
+          </div>
+        </fieldset>
+
+        <div class="q-result" id="qResult" hidden>
+          <p class="label">Vašemu dni nejvíc sedí</p>
+          <div class="r-card" id="rCard">
+            <div class="orb" id="rOrb" aria-hidden="true"></div>
+            <h1 id="rName"></h1>
+            <p id="rText"></p>
+          </div>
+          <div class="ctas">
+            <a class="btn btn-solid" id="rOrder" href="objednavka.html">Objednat</a>
+            <a class="btn btn-ghost" id="rDetail" href="index.html#plany">Detail plánu</a>
+          </div>
+          <button type="button" class="q-again" id="qAgain">Zkusit znovu</button>
+          <small class="q-note">Kvíz je orientační a pomáhá vybrat podle denního rytmu. Není to zdravotní doporučení. Pokud užíváte léky nebo máte zdravotní potíže, poraďte se s lékařem.</small>
+        </div>
+        <button type="button" class="q-back" id="qBack" hidden>← Zpět</button>
+      </div>
+    </div>
+  </section>
+</main>
