@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Najít plán · Apothelix</title>
+<meta name="description" content="Tři otázky, které vám pomohou vybrat plán Apothelix podle denního rytmu.">
+<meta name="theme-color" content="#EEF2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1613" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Apothelix">
+<meta property="og:title" content="Najít plán · Apothelix">
+<meta property="og:description" content="Tři otázky, které vám pomohou vybrat plán Apothelix podle denního rytmu.">
+<meta property="og:image" content="https://apothelix.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://apothelix.vercel.app/kviz">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+<header class="top" id="siteHeader">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Apothelix, úvodní stránka">
+      <svg class="seal" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width=".75" stroke-dasharray="1.5 2.2"/>
+        <text x="24" y="31.5" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="22" fill="currentColor">A</text>
+      </svg>
+      <span class="word"><b>Apothelix</b><small>Bylinná apotéka</small></span>
+    </a>
+    <nav class="pill-nav" aria-label="Hlavní navigace">
+      <a href="index.html#plany">Plány</a>
+      <a href="index.html#pribeh">Můj příběh</a>
+      <a href="geniolok.html">Geniolok</a>
+    </nav>
+    <div class="bar-end">
+      <a class="btn btn-solid bar-cta" href="objednavka.html">Objednat</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otevřít menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilní navigace" hidden>
+    <a href="index.html#plany">Plány</a>
+    <a href="index.html#pribeh">Můj příběh</a>
+    <a href="geniolok.html">Geniolok</a>
+    <a class="btn btn-solid" href="objednavka.html">Objednat</a>
+  </nav>
+</header>
+
+<main id="obsah">
+  <section class="quiz-sec">
+    <div class="wrap quiz-wrap">
+      <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><span>Najít plán</span></p>
+      <div class="quiz" id="quiz" aria-live="polite">
+        <div class="q-progress" aria-hidden="true"><i id="qBar"></i></div>
+        <p class="label" id="qStep">Otázka 1 ze 3</p>
+
+        <fieldset class="q active" data-q="0">
+          <legend><h1>Kdy během dne to cítíte nejvíc?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><span class="chip am">RÁNO</span><b>Ráno se těžko rozjíždím</b><small>Budík, káva, a stejně to trvá do oběda.</small></button>
+            <button type="button" class="q-opt" data-v="all"><span class="chip pm">ODPOLEDNE</span><b>Odpoledne padám</b><small>Po obědě přijde útlum a hlava jede na půl plynu.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><span class="chip ev">VEČER</span><b>Večer nemůžu vypnout</b><small>Tělo je unavené, ale myšlenky běží dál.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="1" hidden>
+          <legend><h1>Co vystihuje vaše poslední měsíce?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><b>Bylo toho moc</b><small>Pracovní večeře, oslavy, jídlo ve spěchu.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Tlak a stres</b><small>Termíny, telefon do noci, málo klidu.</small></button>
+            <button type="button" class="q-opt" data-v="all"><b>Trochu od všeho</b><small>Málo spánku, hodně práce, nepravidelný den.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="2" hidden>
+          <legend><h1>Co od plánu chcete hlavně?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="all"><b>Vyřešit celý den</b><small>Ráno, odpoledne i večer, bez přemýšlení.</small></button>
+            <button type="button" class="q-opt" data-v="am"><b>Silné ráno</b><small>Těžiště na začátku dne.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Klidné večery</b><small>Těžiště na konci dne.</small></button>
+          </div>
+        </fieldset>
+
+        <div class="q-result" id="qResult" hidden>
+          <p class="label">Vašemu dni nejvíc sedí</p>
+          <div class="r-card" id="rCard">
+            <div class="orb" id="rOrb" aria-hidden="true"></div>
+            <h1 id="rName"></h1>
+            <p id="rText"></p>
+          </div>
+          <div class="ctas">
+            <a class="btn btn-solid" id="rOrder" href="objednavka.html">Objednat</a>
+            <a class="btn btn-ghost" id="rDetail" href="index.html#plany">Detail plánu</a>
+          </div>
+          <button type="button" class="q-again" id="qAgain">Zkusit znovu</button>
+          <small class="q-note">Kvíz je orientační a pomáhá vybrat podle denního rytmu. Není to zdravotní doporučení. Pokud užíváte léky nebo máte zdravotní potíže, poraďte se s lékařem.</small>
+        </div>
+        <button type="button" class="q-back" id="qBack" hidden>← Zpět</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <p>Doplněk stravy. Neslouží jako náhrada pestré a vyvážené stravy.</p>
+      <p>Tento produkt není určen k diagnostice, léčbě, léčení nebo prevenci jakékoli nemoci.</p>
+      <p>Nepřekračujte doporučenou denní dávku.</p>
+    </div>
+    <div class="fineprint">
+      <p>Uchovávejte mimo dosah dětí. Není určeno pro děti, těhotné a kojící ženy. Při užívání léků se poraďte s lékařem.</p>
+      <p>* Tvrzení u rostlinných látek čekají na posouzení EFSA a používají se v souladu s přechodnými ustanoveními nařízení (ES) č. 1924/2006.</p>
+    </div>
+    <div class="foot-row">
+      <span>© 2026 Apothelix · apothelix.cz</span>
+      <span><a href="genioloci.html">GenioLoci</a> · <a href="jatrodej.html">Jatroděj</a> · <a href="ocistelix.html">Očistelix</a> · <a href="geniolok.html">Geniolok</a> · <a href="pribeh.html">Můj příběh</a> · <a href="objednavka.html">Objednávka</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -155,3 +155,77 @@
   document.addEventListener('visibilitychange',function(){run=!document.hidden;if(run){last=0;requestAnimationFrame(frame)}});
   requestAnimationFrame(frame);
 })();
+(function(){
+  // Hero: rozdělit nadpis na slova, ať naskakují postupně
+  var h=document.querySelector('.hero2-text h1'); if(!h) return;
+  var i=0;
+  function wrap(node){
+    var s=document.createElement('span');s.className='w';s.style.setProperty('--i',i++);return s;
+  }
+  Array.prototype.slice.call(h.childNodes).forEach(function(n){
+    if(n.nodeType===3){
+      var frag=document.createDocumentFragment();
+      n.textContent.split(/(\s+)/).forEach(function(part){
+        if(!part) return;
+        if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(part));return}
+        var s=wrap();s.textContent=part;frag.appendChild(s);
+      });
+      h.replaceChild(frag,n);
+    }else{var s=wrap();h.replaceChild(s,n);s.appendChild(n)}
+  });
+  h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());
+})();
+(function(){
+  // Tečky pod karuselem plánů na mobilu
+  var c=document.querySelector('.hero2 .pcards'),d=document.querySelectorAll('.pdots i'); if(!c||!d.length) return;
+  c.addEventListener('scroll',function(){
+    var cards=c.children,best=0,min=1e9,mid=c.scrollLeft+c.clientWidth/2;
+    for(var k=0;k<cards.length;k++){var m=Math.abs(cards[k].offsetLeft+cards[k].offsetWidth/2-mid);if(m<min){min=m;best=k}}
+    d.forEach(function(x,k){x.classList.toggle('on',k===best)});
+  },{passive:true});
+})();
+(function(){
+  // Spodní lišta Objednat: objeví se, když hlavní tlačítko zmizí z obrazovky
+  var b=document.getElementById('buybar'),t=document.querySelector('.page-hero .ctas'); if(!b||!t||!window.IntersectionObserver) return;
+  var link=b.querySelector('a');
+  new IntersectionObserver(function(e){
+    var show=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;
+    b.classList.toggle('show',show);b.setAttribute('aria-hidden',show?'false':'true');link.tabIndex=show?0:-1;
+  }).observe(t);
+})();
+(function(){
+  // Kvíz: tři otázky, výsledek podle převažující části dne
+  var q=document.getElementById('quiz'); if(!q) return;
+  var steps=q.querySelectorAll('.q'),bar=document.getElementById('qBar'),lab=document.getElementById('qStep'),back=document.getElementById('qBack'),res=document.getElementById('qResult');
+  var answers=[],cur=0;
+  var PLANS={
+    all:{name:'GenioLoci',slug:'genioloci',orb:'<i class="o am"></i><i class="o pm"></i><i class="o ev"></i>',text:'Celý den v jednom plánu: ráno, odpoledne i večer. Pro ty, kdo nechtějí řešit, kterou část dne posílit, a chtějí mít rutinu hotovou.'},
+    am:{name:'Jatroděj',slug:'jatrodej',orb:'<i class="o am"></i>',text:'Těžiště leží ráno, se zesílenou dávkou ostropestřce a NAC. Pro období po náročném životním stylu, kdy toho bylo víc než dost.'},
+    ev:{name:'Očistelix',slug:'ocistelix',orb:'<i class="o ev"></i>',text:'Těžiště leží večer: hořčík, L-theanin a ashwagandha. Pro ty, kdo večer leží v posteli a hlava pořád běží.'}
+  };
+  function show(n){
+    cur=n;steps.forEach(function(s,k){s.hidden=k!==n;s.classList.toggle('active',k===n)});
+    bar.style.width=(n/steps.length*100)+'%';lab.textContent='Otázka '+(n+1)+' ze '+steps.length;lab.hidden=false;
+    back.hidden=n===0;res.hidden=true;
+    steps[n].querySelectorAll('.q-opt').forEach(function(o){o.classList.toggle('picked',answers[n]===o.dataset.v)});
+  }
+  function result(){
+    var score={all:0,am:0,ev:0};answers.forEach(function(a){score[a]++});
+    var pick='all';if(score.am>score.all&&score.am>score.ev)pick='am';else if(score.ev>score.all&&score.ev>score.am)pick='ev';
+    var p=PLANS[pick];
+    steps.forEach(function(s){s.hidden=true});back.hidden=true;lab.hidden=true;bar.style.width='100%';
+    var orb=document.getElementById('rOrb');orb.className='orb'+(pick==='all'?'':' solo');orb.innerHTML=p.orb;
+    document.getElementById('rName').textContent=p.name;document.getElementById('rText').textContent=p.text;
+    document.getElementById('rOrder').href='objednavka.html#'+p.slug;document.getElementById('rOrder').textContent='Objednat '+p.name;
+    document.getElementById('rDetail').href=p.slug+'.html';
+    res.hidden=false;var h=res.querySelector('h1');h.setAttribute('tabindex','-1');h.focus({preventScroll:true});window.scrollTo({top:0,behavior:'smooth'});
+  }
+  q.addEventListener('click',function(e){
+    var o=e.target.closest('.q-opt'); if(!o) return;
+    answers[cur]=o.dataset.v;o.classList.add('picked');
+    setTimeout(function(){cur+1<steps.length?show(cur+1):result()},220);
+  });
+  back.addEventListener('click',function(){if(cur>0)show(cur-1)});
+  document.getElementById('qAgain').addEventListener('click',function(){answers=[];show(0)});
+  show(0);
+})();

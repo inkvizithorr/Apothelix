@@ -5,12 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Apothelix</title>
 <meta name="description" content="Tradiční bylinná apotéka a moderní buněčná optimalizace. Ucelené plány doplňků stravy rozdělené podle denního rytmu.">
+<meta name="theme-color" content="#EEF2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1613" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Apothelix">
+<meta property="og:title" content="Apothelix">
+<meta property="og:description" content="Tradiční bylinná apotéka a moderní buněčná optimalizace. Ucelené plány doplňků stravy rozdělené podle denního rytmu.">
+<meta property="og:image" content="https://apothelix.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://apothelix.vercel.app/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Apothelix","url":"https://apothelix.vercel.app","logo":"https://apothelix.vercel.app/icon-512.png","description":"Bylinná apotéka: plány doplňků stravy podle denního rytmu."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="top" id="siteHeader">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Apothelix, úvodní stránka">
@@ -39,7 +53,7 @@
   </nav>
 </header>
 
-<main id="top">
+<main id="obsah">
   <section class="hero2" id="plany">
     <div class="wrap">
       <div class="hero2-text">
@@ -73,6 +87,8 @@
           <span class="pc-go">Detail plánu <b aria-hidden="true">→</b></span>
         </a>
       </div>
+      <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <a class="finder" href="kviz.html"><span class="finder-ic" aria-hidden="true">?</span><span><b>Nevíte, který plán?</b><small>Tři otázky, dvacet vteřin.</small></span><b class="finder-go" aria-hidden="true">→</b></a>
       <p class="pc-note">Každý plán: 30 dní · dávkovač Geniolok v ceně · cena brzy</p>
     </div>
   </section>

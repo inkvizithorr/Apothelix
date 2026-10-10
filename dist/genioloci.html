@@ -5,12 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GenioLoci · Apothelix</title>
 <meta name="description" content="Komplexní 30denní plán GenioLoci pro ráno, odpoledne i večer.">
+<meta name="theme-color" content="#EEF2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1613" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Apothelix">
+<meta property="og:title" content="GenioLoci · Apothelix">
+<meta property="og:description" content="Komplexní 30denní plán GenioLoci pro ráno, odpoledne i večer.">
+<meta property="og:image" content="https://apothelix.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://apothelix.vercel.app/genioloci">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
 <header class="top" id="siteHeader">
   <div class="wrap bar">
     <a class="brand" href="index.html" aria-label="Apothelix, úvodní stránka">
@@ -39,7 +52,7 @@
   </nav>
 </header>
 
-<main>
+<main id="obsah">
   <section class="page-hero">
     <div class="wrap">
       <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><a href="index.html#plany">Plány</a><span>/</span><span>GenioLoci</span></p>
@@ -125,6 +138,10 @@
       </div>
     </div>
   </section>
+  <div class="buybar" id="buybar" aria-hidden="true">
+    <span><b>GenioLoci</b><small>30 dní · Geniolok v ceně</small></span>
+    <a class="btn btn-solid" href="objednavka.html#genioloci" tabindex="-1">Objednat</a>
+  </div>
 </main>
 
 <footer>
