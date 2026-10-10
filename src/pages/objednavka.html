@@ -30,6 +30,11 @@
             </label>
           </div>
           <p class="hint">Každý plán je na 30 dní a obsahuje dávkovač Geniolok.</p>
+          <div class="freq" role="radiogroup" aria-label="Jak často">
+            <label class="seg" for="f-once"><input type="radio" name="freq" id="f-once" value="once" checked><span>Jednorázově</span></label>
+            <label class="seg" for="f-sub"><input type="radio" name="freq" id="f-sub" value="sub"><span>Předplatné každých 30 dní <em class="sub-off" data-sub-off hidden></em></span></label>
+          </div>
+          <p class="hint sub-hint" id="subHint" hidden>Další balení pošleme samo po 30 dnech. Předplatné můžete kdykoli pozastavit nebo zrušit.</p>
         </fieldset>
 
         <fieldset class="step">
@@ -98,6 +103,7 @@
         <p class="label">Souhrn</p>
         <dl>
           <div><dt>Plán</dt><dd id="s-plan">GenioLoci</dd></div>
+          <div><dt>Odběr</dt><dd id="s-freq">Jednorázově</dd></div>
           <div><dt>Doručení</dt><dd id="s-delivery">Zásilkovna</dd></div>
           <div><dt>Platba</dt><dd id="s-pay">QR platba</dd></div>
           <div class="total"><dt>Celkem</dt><dd id="s-total">Cena brzy</dd></div>

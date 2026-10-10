@@ -1,0 +1,54 @@
+<main id="obsah">
+  <section class="quiz-sec">
+    <div class="wrap quiz-wrap">
+      <p class="crumbs"><a href="index.html">Apothelix</a><span>/</span><span>Find your plan</span></p>
+      <div class="quiz" id="quiz" aria-live="polite">
+        <div class="q-progress" aria-hidden="true"><i id="qBar"></i></div>
+        <p class="label" id="qStep">Question 1 of 3</p>
+
+        <fieldset class="q active" data-q="0">
+          <legend><h1>When in the day do you feel it most?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><span class="chip am">MORNING</span><b>I'm slow to get going</b><small>Alarm, coffee, and it still takes until lunch.</small></button>
+            <button type="button" class="q-opt" data-v="all"><span class="chip pm">AFTERNOON</span><b>I flag in the afternoon</b><small>After lunch comes the slump and my head runs at half speed.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><span class="chip ev">EVENING</span><b>I can't switch off at night</b><small>My body is tired, but my thoughts keep racing.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="1" hidden>
+          <legend><h1>What sums up your last few months?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="am"><b>It's been a lot</b><small>Work dinners, celebrations, meals on the run.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Pressure and stress</b><small>Deadlines, phone till late, little calm.</small></button>
+            <button type="button" class="q-opt" data-v="all"><b>A bit of everything</b><small>Little sleep, lots of work, irregular days.</small></button>
+          </div>
+        </fieldset>
+
+        <fieldset class="q" data-q="2" hidden>
+          <legend><h1>What do you want most from a plan?</h1></legend>
+          <div class="q-opts">
+            <button type="button" class="q-opt" data-v="all"><b>Cover the whole day</b><small>Morning, afternoon and evening, no thinking required.</small></button>
+            <button type="button" class="q-opt" data-v="am"><b>Strong mornings</b><small>The focus is on the start of the day.</small></button>
+            <button type="button" class="q-opt" data-v="ev"><b>Calm evenings</b><small>The focus is on the end of the day.</small></button>
+          </div>
+        </fieldset>
+
+        <div class="q-result" id="qResult" hidden>
+          <p class="label">Best fit for your day</p>
+          <div class="r-card" id="rCard">
+            <div class="orb" id="rOrb" aria-hidden="true"></div>
+            <h1 id="rName"></h1>
+            <p id="rText"></p>
+          </div>
+          <div class="ctas">
+            <a class="btn btn-solid" id="rOrder" href="objednavka.html">Order</a>
+            <a class="btn btn-ghost" id="rDetail" href="index.html#plany">View plan</a>
+          </div>
+          <button type="button" class="q-again" id="qAgain">Try again</button>
+          <small class="q-note">This quiz is a rough guide to help you choose based on your daily rhythm. It is not health advice. If you take medication or have a health condition, talk to your doctor.</small>
+        </div>
+        <button type="button" class="q-back" id="qBack" hidden>← Back</button>
+      </div>
+    </div>
+  </section>
+</main>

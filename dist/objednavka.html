@@ -16,7 +16,9 @@
 <meta property="og:description" content="Objednávka plánu Apothelix: doručení a platba.">
 <meta property="og:image" content="https://apothelix.vercel.app/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://apothelix.vercel.app/objednavka">
+<link rel="canonical" href="https://apothelix.vercel.app/objednavka.html">
+<link rel="alternate" hreflang="cs" href="https://apothelix.vercel.app/objednavka.html">
+<link rel="alternate" hreflang="en" href="https://apothelix.vercel.app/en/objednavka.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Young+Serif&display=swap">
@@ -40,6 +42,7 @@
       <a href="geniolok.html">Geniolok</a>
     </nav>
     <div class="bar-end">
+      <a class="lang" href="en/objednavka.html" hreflang="en" lang="en" aria-label="English version">EN</a>
       <a class="btn btn-solid bar-cta" href="objednavka.html">Objednat</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otevřít menu"><span></span><span></span></button>
     </div>
@@ -48,6 +51,8 @@
     <a href="index.html#plany">Plány</a>
     <a href="index.html#pribeh">Můj příběh</a>
     <a href="geniolok.html">Geniolok</a>
+    <a href="kviz.html">Najít plán</a>
+    <a href="en/objednavka.html" hreflang="en" lang="en">English</a>
     <a class="btn btn-solid" href="objednavka.html">Objednat</a>
   </nav>
 </header>
@@ -84,6 +89,11 @@
             </label>
           </div>
           <p class="hint">Každý plán je na 30 dní a obsahuje dávkovač Geniolok.</p>
+          <div class="freq" role="radiogroup" aria-label="Jak často">
+            <label class="seg" for="f-once"><input type="radio" name="freq" id="f-once" value="once" checked><span>Jednorázově</span></label>
+            <label class="seg" for="f-sub"><input type="radio" name="freq" id="f-sub" value="sub"><span>Předplatné každých 30 dní <em class="sub-off" data-sub-off hidden></em></span></label>
+          </div>
+          <p class="hint sub-hint" id="subHint" hidden>Další balení pošleme samo po 30 dnech. Předplatné můžete kdykoli pozastavit nebo zrušit.</p>
         </fieldset>
 
         <fieldset class="step">
@@ -152,6 +162,7 @@
         <p class="label">Souhrn</p>
         <dl>
           <div><dt>Plán</dt><dd id="s-plan">GenioLoci</dd></div>
+          <div><dt>Odběr</dt><dd id="s-freq">Jednorázově</dd></div>
           <div><dt>Doručení</dt><dd id="s-delivery">Zásilkovna</dd></div>
           <div><dt>Platba</dt><dd id="s-pay">QR platba</dd></div>
           <div class="total"><dt>Celkem</dt><dd id="s-total">Cena brzy</dd></div>
@@ -194,5 +205,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

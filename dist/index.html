@@ -17,6 +17,8 @@
 <meta property="og:image" content="https://apothelix.vercel.app/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://apothelix.vercel.app/">
+<link rel="alternate" hreflang="cs" href="https://apothelix.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://apothelix.vercel.app/en/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Apothelix","url":"https://apothelix.vercel.app","logo":"https://apothelix.vercel.app/icon-512.png","description":"Bylinná apotéka: plány doplňků stravy podle denního rytmu."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +43,7 @@
       <a href="geniolok.html">Geniolok</a>
     </nav>
     <div class="bar-end">
+      <a class="lang" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a>
       <a class="btn btn-solid bar-cta" href="objednavka.html">Objednat</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otevřít menu"><span></span><span></span></button>
     </div>
@@ -49,6 +52,8 @@
     <a href="index.html#plany">Plány</a>
     <a href="index.html#pribeh">Můj příběh</a>
     <a href="geniolok.html">Geniolok</a>
+    <a href="kviz.html">Najít plán</a>
+    <a href="en/index.html" hreflang="en" lang="en">English</a>
     <a class="btn btn-solid" href="objednavka.html">Objednat</a>
   </nav>
 </header>
@@ -68,6 +73,7 @@
           <h3>GenioLoci</h3>
           <p>Celý den: ráno játra, odpoledne energie, večer zklidnění.</p>
           <div class="phases"><span class="chip am">RÁNO</span><span class="chip pm">ODPOLEDNE</span><span class="chip ev">VEČER</span></div>
+          <span class="pc-price" data-plan-price="GenioLoci" data-day-only hidden></span>
           <span class="pc-go">Detail plánu <b aria-hidden="true">→</b></span>
         </a>
         <a class="pcard" href="jatrodej.html" data-tilt role="listitem">
@@ -76,6 +82,7 @@
           <h3>Jatroděj</h3>
           <p>Pro období po náročném životním stylu. Těžiště leží na játrech.</p>
           <div class="phases"><span class="chip am">RÁNO ●</span><span class="chip pm">ODPOLEDNE</span><span class="chip ev">VEČER</span></div>
+          <span class="pc-price" data-plan-price="Jatroděj" data-day-only hidden></span>
           <span class="pc-go">Detail plánu <b aria-hidden="true">→</b></span>
         </a>
         <a class="pcard" href="ocistelix.html" data-tilt role="listitem">
@@ -84,6 +91,7 @@
           <h3>Očistelix</h3>
           <p>Pro ty, kdo žijí ve stresu a večer neumí vypnout hlavu.</p>
           <div class="phases"><span class="chip am">RÁNO</span><span class="chip pm">ODPOLEDNE</span><span class="chip ev">VEČER ●</span></div>
+          <span class="pc-price" data-plan-price="Očistelix" data-day-only hidden></span>
           <span class="pc-go">Detail plánu <b aria-hidden="true">→</b></span>
         </a>
       </div>
@@ -150,7 +158,11 @@
       <div>
         <p class="label">Spouštíme brzy</p>
         <h2 style="margin-top:14px">Chcete být mezi prvními?</h2>
-        <p class="lead" style="margin-top:18px">Nechte nám e-mail. Ozveme se, jakmile e-shop spustíme.</p>
+        <p class="lead" style="margin-top:18px">Nechte nám e-mail. Ozveme se, jakmile e-shop spustíme, a hned teď dostanete dárek.</p>
+        <label class="gift" for="f-email">
+          <span class="gift-cover" aria-hidden="true"><i class="o am"></i><i class="o pm"></i><i class="o ev"></i><b>Denní rytmus</b></span>
+          <span><b>PDF průvodce Denní rytmus</b><small>12 návyků pro ráno, odpoledne a večer. 5 stran, zdarma.</small></span>
+        </label>
       </div>
       <form class="interest" id="interestForm" novalidate>
         <label for="f-email">E-mail<input id="f-email" name="email" type="email" autocomplete="email" required></label>
@@ -160,7 +172,7 @@
           </select>
         </label>
         <label class="consent" for="f-consent"><input id="f-consent" type="checkbox" required>Souhlasím se zpracováním e-mailu za účelem informování o spuštění e-shopu.</label>
-        <button class="btn btn-solid" type="submit">Dejte mi vědět</button>
+        <button class="btn btn-solid" type="submit">Chci průvodce zdarma</button>
         <p class="form-msg" id="formMsg" role="status" hidden></p>
       </form>
     </div>
@@ -186,5 +198,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
